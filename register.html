@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form Design</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="js.js"></script> 
+</head>
+<body>
+    <nav>
+        <a href="index.html">SignIn</a> |
+        <a href="register.html">SignUp</a> 
+    </nav>
+
+    <div class="box">
+        <img src="user.jpg" class="user"><b>
+        <h1> Register Here</h1></b>
+        <form name="myform2" onsubmit="return vfun1()">
+            <p>Username</p>
+            <input type="text" name="uname1" placeholder="Enter username">
+            <p>Email</p>
+            <input type="email" name="email1" placeholder="enter email id">
+
+            <p>Password</p>
+            <input type="password" name="upswd1" placeholder="Enter password">
+            <p>Retype password</p>
+            <input type="password" name="upswd2" placeholder="Re-Enter password">
+            <div id="errorBox"></div>
+            <input type="submit" value="Register">
+            <br><br>
+            <a href="register.html">Register for new account ?</a>
+        </form>
+    </div>
+    <br/>
+</body>
+</html>
+
+
+<script type="text/javascript">
+    function vfun1() {
+        var uname = document.myform2.uname1.value;
+        var email = document.myform2.email1.value;
+        var password1 = document.myform2.upswd1.value;
+        var password2 = document.myform2.upswd2.value;
+
+       
+        if (uname == "" || email == "" || password1 == "" || password2 == "") {
+            alert("All fields are required!");
+            return false; 
+        }
+
+        if (password1 !== password2) {
+            alert("Passwords do not match!");
+            return false;
+        }
+
+        
+        alert("Form submitted successfully!");
+        return true;
+    }
+</script>
